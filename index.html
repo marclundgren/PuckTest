@@ -14,6 +14,10 @@
           document.getElementById("acceleration").innerHTML = t;
         });
       }
+
+      Puck.on("accel", (a) => {
+        document.getElementById("acceleration").innerHTML = a;
+      });
     </script>
     <div>
       <div>
@@ -25,7 +29,7 @@
       <div>
         <span id="acceleration"></span>
       </div>
-      <button onclick="getAcceleration()">Get Acceleration</button>
+      <!-- <button onclick="getAcceleration()">Get Acceleration</button> -->
     </div>
   </body>
 </html>
