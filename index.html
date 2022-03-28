@@ -5,11 +5,27 @@
     <script>
       function getTemperature() {
         UART.eval("E.getTemperature()", function (t) {
-          document.getElementById("result").innerHTML = t;
+          document.getElementById("temperature").innerHTML = t;
+        });
+      }
+
+      function getAcceleration() {
+        UART.eval("E.accel()", function (t) {
+          document.getElementById("acceleration").innerHTML = t;
         });
       }
     </script>
-    <button onclick="getTemperature()">Get Temperature</button>
-    <span id="result"></span>
+    <form onsubmit="getTempurature()">
+      <button type="submit">Get Temperature</button>
+    </form>
+    <form onsubmit="getTempurature()">
+      <button type="submit">Get Temperature</button>
+    </form>
+    <div>
+      <span id="temperature"></span>
+    </div>
+    <div>
+      <span id="acceleration"></span>
+    </div>
   </body>
 </html>
