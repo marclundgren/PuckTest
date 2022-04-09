@@ -19,12 +19,21 @@
       Puck.on("accel", (a) => {
         document.getElementById("acceleration").innerHTML = a;
       });
+
+      function setLight() {
+        Puck.write('LED1.set();\n');
+      }
     </script>
     <div>
       <div>
         <span id="temperature"></span>
       </div>
       <button onclick="getTemperature()">Get Temperature</button>
+    </div>
+    <div>
+      <div>
+        <span id="LED"></span>
+        <button onclick="setLight"><pre>Puck.write('LED1.set();\n');</pre></button>
     </div>
     <div>
       <div>
